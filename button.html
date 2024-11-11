@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>微信名片展示按钮</title>
+    <style>
+        .weixin-container {
+            display: flex;
+            align-items: center;
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: box-shadow 0.3s ease;
+            width: fit-content;
+        }
+        .weixin-container:hover {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #f0f0f0; /* Placeholder color */
+            margin-right: 10px;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+        }
+        .content p {
+            margin: 0;
+            font-size: 14px;
+            color: #000000;
+        }
+        .content p:first-child {
+            font-weight: bold;
+        }
+        .wx-logo {
+            width: 24px;
+            height: 24px;
+            margin-left: 10px;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 300px;
+            text-align: center;
+            position: relative;
+        }
+        .close {
+            color: #aaa;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .qr-image {
+            max-width: 100%;
+            height: auto;
+        }
+        .head-image{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 微信名片按钮 -->
+    <div class="weixin-container" onclick="showWeixinModal()">
+        <div class="avatar">
+            <img src="https://www.helloimg.com/i/2024/11/11/6731d77f826e7.jpg" alt="微信头像" class="head-image">
+        </div>
+        <div class="content">
+            <p>非开源 | 定制开发 | 商务合作</p>
+            <p>微信名片</p>
+        </div>
+        <img src="https://img.picui.cn/free/2024/11/11/6731dcf92706a.jpg" alt="微信Logo" class="wx-logo">
+    </div>
+
+    <!-- 模态框 -->
+    <div id="weixinModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeWeixinModal()">&times;</span>
+            <img src="https://www.helloimg.com/i/2024/11/11/6731d0d07f342.jpg" alt="微信二维码" class="qr-image">
+            <p>微信ID：Yiying-102899</p>
+        </div>
+    </div>
+
+    <script>
+        // 显示微信名片模态框
+        function showWeixinModal() {
+            document.getElementById("weixinModal").style.display = "block";
+        }
+
+        // 关闭微信名片模态框
+        function closeWeixinModal() {
+            document.getElementById("weixinModal").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
